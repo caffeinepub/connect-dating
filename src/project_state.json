@@ -1,0 +1,55 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Sex/dating/adult content application",
+  "architectural_notes": [],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Romantic hero banner image with warm sunset tones and silhouettes (hero-banner.dim_1200x600.png)\n- Heart icon for like/match actions in modern style (heart-icon.dim_64x64.png)\n- Message bubble icon for chat interface (message-icon.dim_48x48.png)\n- Profile placeholder avatar with neutral aesthetic (profile-placeholder.dim_200x200.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-a-user-profile-system-where-users-can-register-and-create-profiles-with-basic-information-including-name-age-bio-and-interests",
+      "title": "Create a user profile system where users can register and create profiles with basic information including name, age, bio, and interests",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-profile-browsing-interface-where-users-can-view-other-users-profiles-with-their-information-and-photos",
+      "title": "Implement a profile browsing interface where users can view other users' profiles with their information and photos",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-matching-system-where-users-can-express-interest-in-other-profiles-and-see-mutual-matches",
+      "title": "Create a matching system where users can express interest in other profiles and see mutual matches",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-messaging-interface-where-matched-users-can-send-text-messages-to-each-other",
+      "title": "Implement a messaging interface where matched users can send text messages to each other",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-design-a-modern-romantic-visual-theme-with-warm-colors-elegant-typography-and-a-welcoming-layout-that-creates-an-inviting-atmosphere-for-connection-and-relationship-building",
+      "title": "Design a modern, romantic visual theme with warm colors, elegant typography, and a welcoming layout that creates an inviting atmosphere for connection and relationship-building",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [],
+  "projectName": "Connect Dating",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

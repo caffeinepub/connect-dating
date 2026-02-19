@@ -1,0 +1,106 @@
+{
+  "kind": "build_request",
+  "title": "Create dating and relationship application",
+  "projectName": "Connect Dating",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a user profile system where users can register and create profiles with basic information including name, age, bio, and interests",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Users can create a profile with name, age, bio, and interests",
+        "Profile data is persisted in the backend",
+        "Users can view and edit their own profile"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Implement a profile browsing interface where users can view other users' profiles with their information and photos",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Users can browse through other user profiles",
+        "Each profile displays the user's information clearly",
+        "Navigation between profiles is smooth and intuitive"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Create a matching system where users can express interest in other profiles and see mutual matches",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Users can like or pass on profiles",
+        "System identifies and displays mutual matches",
+        "Match data is stored and retrievable from backend"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Implement a messaging interface where matched users can send text messages to each other",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Matched users can send messages to each other",
+        "Messages are displayed in a conversation view",
+        "Message history is persisted and retrievable"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Design a modern, romantic visual theme with warm colors, elegant typography, and a welcoming layout that creates an inviting atmosphere for connection and relationship-building",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Visual design uses warm, romantic color palette",
+        "Typography is elegant and readable",
+        "Layout creates a welcoming user experience",
+        "Design is consistent across all pages"
+      ]
+    }
+  ],
+  "constraints": [
+    "Must comply with platform content policies",
+    "No explicit adult content or inappropriate imagery",
+    "Must use Internet Identity for authentication"
+  ],
+  "nonGoals": [
+    "Real-time chat with WebSockets",
+    "Video calling features",
+    "Location-based matching",
+    "Integration with social media platforms",
+    "Push notifications",
+    "Advanced algorithm-based matching"
+  ],
+  "imageRequirements": {
+    "required": [
+      "Romantic hero banner image with warm sunset tones and silhouettes (hero-banner.dim_1200x600.png)",
+      "Heart icon for like/match actions in modern style (heart-icon.dim_64x64.png)",
+      "Message bubble icon for chat interface (message-icon.dim_48x48.png)",
+      "Profile placeholder avatar with neutral aesthetic (profile-placeholder.dim_200x200.png)"
+    ],
+    "edits": []
+  }
+}

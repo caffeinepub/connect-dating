@@ -1,0 +1,178 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Connect Dating - Frontend Implementation Plan",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Create user profile system with registration, profile creation, and editing capabilities",
+      "acceptanceCriteria": [
+        "Users can create a profile with name, age, bio, and interests",
+        "Profile data is persisted in the backend",
+        "Users can view and edit their own profile"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/useUserProfile.ts",
+          "operation": "create",
+          "description": "Create custom hook for fetching and managing user profiles using the authorization component's getCallerUserProfile and saveCallerUserProfile capabilities. Verify the authorization component's usage instructions before implementing. Include query invalidation on profile updates."
+        },
+        {
+          "path": "frontend/src/components/ProfileSetup.tsx",
+          "operation": "create",
+          "description": "Create profile setup modal that appears for first-time users without a profile. Use the authorization component to check for profile existence via getCallerUserProfile and handle profile creation via saveCallerUserProfile. Verify the authorization component's usage instructions before implementing. Include fields for fullName, age, bio, interests (as tags), nativeLanguages, and targetLanguages. Wire the generated profile-placeholder.dim_200x200.png image located at frontend/public/assets/generated/profile-placeholder.dim_200x200.png as a visual placeholder."
+        },
+        {
+          "path": "frontend/src/components/ProfileEditor.tsx",
+          "operation": "create",
+          "description": "Create profile editor component allowing users to view and edit their own profile details including fullName, age, bio, interests array, nativeLanguages, and targetLanguages. Use saveCallerUserProfile capability to persist changes. Include form validation for required fields."
+        },
+        {
+          "path": "frontend/src/pages/MyProfile.tsx",
+          "operation": "create",
+          "description": "Create profile page displaying current user's complete profile information with an edit button that opens the ProfileEditor component. Use the authorization component's getCallerUserProfile capability to fetch profile data."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wire ProfileSetup modal to show when authenticated user lacks a profile. Integrate route for /profile page using MyProfile component. Follow the authorization component's pattern to prevent profile setup modal flash by checking isAuthenticated, profileLoading, isFetched, and userProfile === null."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Implement profile browsing interface for viewing other users' profiles",
+      "acceptanceCriteria": [
+        "Users can browse through other user profiles",
+        "Each profile displays the user's information clearly",
+        "Navigation between profiles is smooth and intuitive"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/useBrowseProfiles.ts",
+          "operation": "create",
+          "description": "Create hook to fetch active participants using getCurrentActiveParticipants backend capability. Filter out current user and already-matched users. Return browsable profiles list."
+        },
+        {
+          "path": "frontend/src/components/ProfileCard.tsx",
+          "operation": "create",
+          "description": "Create profile card component displaying another user's ShortProfile information including fullName, age, bio, nativeLanguages, targetLanguages, and currentStatus. Use the generated profile-placeholder.dim_200x200.png located at frontend/public/assets/generated/profile-placeholder.dim_200x200.png as avatar fallback. Include like/pass action buttons wired with the generated heart-icon.dim_64x64.png located at frontend/public/assets/generated/heart-icon.dim_64x64.png."
+        },
+        {
+          "path": "frontend/src/pages/Browse.tsx",
+          "operation": "create",
+          "description": "Create browsing page that displays ProfileCard components in a card-stack or list layout. Implement smooth transitions between profiles. Include like/pass interaction handling via likeUser backend capability."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wire Browse page into router at /browse route and add navigation link in main navigation."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Create matching system for expressing interest and viewing mutual matches",
+      "acceptanceCriteria": [
+        "Users can like or pass on profiles",
+        "System identifies and displays mutual matches",
+        "Match data is stored and retrievable from backend"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/useMatching.ts",
+          "operation": "create",
+          "description": "Create hook for match operations including likeUser backend capability and fetching matches via getMatches capability. Handle mutual match detection by checking if likeUser returns true. Implement query invalidation to refresh matches list."
+        },
+        {
+          "path": "frontend/src/components/MatchNotification.tsx",
+          "operation": "create",
+          "description": "Create toast-style notification component that displays when a mutual match occurs. Use the generated heart-icon.dim_64x64.png located at frontend/public/assets/generated/heart-icon.dim_64x64.png to visually indicate the match."
+        },
+        {
+          "path": "frontend/src/pages/Matches.tsx",
+          "operation": "create",
+          "description": "Create matches page displaying list of mutual matches using getMatches backend capability. Show match timestamp and provide navigation to message each match. Use ProfileCard component for consistent profile display."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wire Matches page into router at /matches route and add navigation link in main navigation."
+        },
+        {
+          "path": "frontend/src/pages/Browse.tsx",
+          "operation": "modify",
+          "description": "Integrate useMatching hook to handle like actions. Show MatchNotification component when mutual match detected after likeUser call returns true."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Implement messaging interface for matched users to communicate",
+      "acceptanceCriteria": [
+        "Matched users can send messages to each other",
+        "Messages are displayed in a conversation view",
+        "Message history is persisted and retrievable"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/useMessages.ts",
+          "operation": "create",
+          "description": "Create hook for message operations including sendMessage and getMessages backend capabilities. Implement polling or manual refresh for message updates. Filter messages by conversation partner."
+        },
+        {
+          "path": "frontend/src/components/ConversationView.tsx",
+          "operation": "create",
+          "description": "Create conversation component displaying message history between current user and selected match. Show sender, content, and timestamp for each message. Use the generated message-icon.dim_48x48.png located at frontend/public/assets/generated/message-icon.dim_48x48.png as a visual indicator. Include message input field with send button."
+        },
+        {
+          "path": "frontend/src/pages/Messages.tsx",
+          "operation": "create",
+          "description": "Create messages page with split view showing match list on left and ConversationView on right for selected match. Use getMessages to fetch conversation history. Handle message sending via sendMessage capability."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wire Messages page into router at /messages route and add navigation link in main navigation."
+        },
+        {
+          "path": "frontend/src/pages/Matches.tsx",
+          "operation": "modify",
+          "description": "Add message button to each match card that navigates to /messages with selected match as conversation partner."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Design modern romantic visual theme with warm colors and elegant typography",
+      "acceptanceCriteria": [
+        "Visual design uses warm, romantic color palette",
+        "Typography is elegant and readable",
+        "Layout creates a welcoming user experience",
+        "Design is consistent across all pages"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Extend Tailwind theme with warm romantic color palette including rose, pink, coral, and peach tones. Define elegant typography scale with serif font family for headings and clean sans-serif for body text. Add custom spacing and border radius values for soft, welcoming layouts."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Apply romantic theme colors to global CSS variables and body styles. Set elegant font families and base typography styles. Define smooth transitions and soft shadows for welcoming aesthetic."
+        },
+        {
+          "path": "frontend/src/components/Layout.tsx",
+          "operation": "create",
+          "description": "Create layout wrapper component with warm-themed header including navigation, consistent padding, and welcoming visual structure. Include the generated hero-banner.dim_1200x600.png located at frontend/public/assets/generated/hero-banner.dim_1200x600.png as a hero section element on the main landing area of an existing required page to establish romantic atmosphere."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wrap all routes with Layout component to ensure consistent romantic theme across all pages."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "frontend/src/index.css": "Global styles with warm romantic OKLCH color palette for light and dark modes, featuring rose, coral, and peach tones with elegant typography.",
+  "frontend/tailwind.config.js": "Tailwind configuration extended with romantic color system, Playfair Display serif font for headings, custom border radii, and soft shadow utilities.",
+  "frontend/src/hooks/useQueries.ts": "React Query hooks for all backend operations including user profiles, browsing participants, matching, and messaging with proper TypeScript types for Status enum.",
+  "frontend/src/components/Layout.tsx": "Main layout wrapper with romantic-themed header, navigation menu for authenticated users, login/logout button, and footer with attribution.",
+  "frontend/src/components/ProfileSetup.tsx": "Modal dialog for first-time users to create their profile with name, age, bio, and language preferences using correct Status enum values.",
+  "frontend/src/components/ProfileEditor.tsx": "Dialog component allowing users to edit their profile information including interests and languages with tag-based input.",
+  "frontend/src/components/ProfileCard.tsx": "Card component displaying user profile with avatar, bio, languages, and like/pass action buttons.",
+  "frontend/src/components/MatchNotification.tsx": "Toast notification component that displays when a mutual match occurs using the heart icon asset with updated Tailwind v3 class names.",
+  "frontend/src/components/ConversationView.tsx": "Chat interface component showing message history and input field for conversations between matched users.",
+  "frontend/src/pages/Home.tsx": "Landing page with hero banner, feature highlights, and call-to-action sections promoting the dating platform.",
+  "frontend/src/pages/Browse.tsx": "Profile browsing page with card-stack interface for liking or passing on user profiles with match detection, using proper Status enum and array filtering.",
+  "frontend/src/pages/Matches.tsx": "Page displaying all mutual matches with options to navigate to message conversations.",
+  "frontend/src/pages/Messages.tsx": "Split-view messaging interface with conversation list sidebar and active chat window, using correct Status enum for mock profiles.",
+  "frontend/src/pages/MyProfile.tsx": "User profile page displaying current user's complete profile information with edit functionality.",
+  "frontend/src/App.tsx": "Main application component with TanStack Router setup, profile setup modal logic, and theme provider integration using a properly named RootComponent for hooks."
+}

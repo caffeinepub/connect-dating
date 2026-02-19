@@ -1,0 +1,119 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-a-user-profile-system-where-users-can-register-and-create-profiles-with-basic-information-including-name-age-bio-and-interests",
+      "featureTitle": "Create a user profile system where users can register and create profiles with basic information including name, age, bio, and interests",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/ProfileEditor.tsx",
+        "frontend/src/components/ProfileSetup.tsx",
+        "frontend/src/pages/MyProfile.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-a-profile-browsing-interface-where-users-can-view-other-users-profiles-with-their-information-and-photos",
+      "featureTitle": "Implement a profile browsing interface where users can view other users' profiles with their information and photos",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/ProfileCard.tsx",
+        "frontend/src/pages/Browse.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-a-matching-system-where-users-can-express-interest-in-other-profiles-and-see-mutual-matches",
+      "featureTitle": "Create a matching system where users can express interest in other profiles and see mutual matches",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/MatchNotification.tsx",
+        "frontend/src/pages/Browse.tsx",
+        "frontend/src/pages/Matches.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-a-messaging-interface-where-matched-users-can-send-text-messages-to-each-other",
+      "featureTitle": "Implement a messaging interface where matched users can send text messages to each other",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/ConversationView.tsx",
+        "frontend/src/pages/Matches.tsx",
+        "frontend/src/pages/Messages.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-design-a-modern-romantic-visual-theme-with-warm-colors-elegant-typography-and-a-welcoming-layout-that-creates-an-inviting-atmosphere-for-connection-and-relationship-building",
+      "featureTitle": "Design a modern, romantic visual theme with warm colors, elegant typography, and a welcoming layout that creates an inviting atmosphere for connection and relationship-building",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/Layout.tsx",
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

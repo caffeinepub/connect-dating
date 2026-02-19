@@ -1,2 +1,3 @@
-# connect-dating
-Exported from Caffeine project: Connect Dating
+## Connect Dating
+
+To run app build and run docker image: `docker build -t app . docker run -it --network host app`
